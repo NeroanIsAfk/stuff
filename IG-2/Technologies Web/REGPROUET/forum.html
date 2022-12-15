@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simulation de forum</title>
+	<meta charset="utf-8">
+	<style>
+		html {
+			background-color: black;
+		}
+		body {
+			width: 800px;
+			margin: 8px auto;
+			padding: 8px;
+			background-color: gray;
+		}
+		#input {
+			border: 1px solid lightgray;
+			background-color: lemonchiffon;
+			padding: 8px;
+		}
+		#input #headerInput {
+			display: flex;
+			justify-content: space-between;
+		}
+		#input #headerInput p {
+			margin: 0;
+			font-style: italic;
+		}
+		#input textarea {
+			box-sizing: border-box;
+			width: 100%;
+			height: 120px;
+		}
+		#forum {
+			min-height: 20px;
+			border-top : 4px solid grey;
+			background-color: lemonchiffon;
+			padding: 8px;
+		}
+		#forum .message {
+			background-color: white;
+			padding: 6px;
+			border: 1px solid black;
+			box-shadow: 3px 3px 2px black;
+			margin: 0 0 8px 0;
+		}
+		#forum .message .parole:before, #forum .message .parole:after {
+			font-weight: bold;
+			position: relative;
+		}
+		#forum .message .parole:before {
+			content: "\ab";
+			bottom: 4px;
+			padding-right: 1px;
+		}
+		#forum .message .parole:after {
+			content: "\bb";
+			top: 1px;
+			padding-left: 1px;
+		}
+	</style>
+	<script>
+		let noeudForum;
+		let noeudTexte;
+
+		window.onload = init;
+		function init() {
+			document.getElementById("bAjoute").onclick = ajoute;
+			document.getElementById("bEfface").onclick = efface;
+			noeudForum = document.getElementById("forum");
+			noeudTexte = document.getElementById("tMessage");
+		}
+
+		function efface() {
+			noeudTexte.value = "";
+		}
+
+		function ajoute() {
+			let texte = noeudTexte.value;
+			if (texte == "")
+				return;
+			let message = document.createElement("div");
+			message.classList.add("message");
+			forum.appendChild(message);
+			message.innerHTML = texteEnHTML(texte);
+		}
+
+		function texteEnHTML(texte) {
+			// à définir
+			return texte;
+		}
+	</script>
+</head>
+<body>
+	<div id="input">
+		<div id="headerInput">
+			<p>Entrez le texte du message ici.</p>
+			<span>
+				<button id="bEfface" type="button" title="Vider le texte">Vider</button>
+				<button id="bAjoute" type="button" title="Envoyer le message">Ajout</button>
+			</span>
+		</div>
+		<textarea id="tMessage"></textarea>
+	</div>
+	<div id="forum">
+	</div>
+</body>
+</html>

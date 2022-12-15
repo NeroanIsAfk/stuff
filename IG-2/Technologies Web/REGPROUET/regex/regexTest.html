@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Construction d'expressions régulières</title>
+	<link rel="stylesheet" type="text/css" href="regexTest.css"/>
+	<script src="regexTest.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Construction de regexp</h1>
+		<nav>
+			<p>
+				<button type="button" id="bsPrec" title="Série précédente">&laquo;</button>
+				<span>Série <span id="srno">0</span>/<span id="srnb">0</span></span>
+				<button type="button" id="bsSuiv" title="Série suivante">&raquo;</button>
+			</p>
+			<p>
+				<button type="button" id="bPrec" title="Exercice précédent">&lsaquo;</button>
+				<span>Exo <span id="exno">0</span>/<span id="exnb">0</span></span>
+				<button type="button" id="bSuiv" title="Exercice suivant">&rsaquo;</button>
+			</p>
+		</nav>
+	</header>
+	<main>
+		<div id="texte"></div>
+		<div id="reponse">
+			<p id="regexp">
+				<span>Expression régulière :  <input type="text" size="40" id="iRegexp" /></span>
+				<span id="res"></span>
+			</p>
+			<p>
+				<span>Test libre :  <input type="text" size="40" id="iTestLibre" /></span>
+				<span id="resTest"></span>
+			</p>
+			<p>
+				Groupes : <span id="sGroupes"></span>
+			</p>
+		</div>
+		<div id="exemples">
+			<div id="exPositifs">
+				<h2>Doit capturer</h2>
+				<ul id="ulPositif"></ul>
+			</div>
+			<div id="exNegatifs">
+				<h2>Doit ignorer</h2>
+				<ul id="ulNegatif"></ul>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
