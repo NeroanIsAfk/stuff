@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8" :>
+        <style>
+            #cadre
+            {
+                background-color: #EFFFEF;
+                border : 1px solid blue;
+                padding : 4px;
+            }
+        </style>
+        <script>
+            protoPara.affiche = function ()
+            {
+                cadreHTML.innerHTML += `<p style = "color : ${this.couleur}; font-weight : ${this.gras ? "bold" : ""}">${this.texte}<br><em>---${this.auteur}</em></p>`;
+            }
+
+            let p3 = Object.create(protoPara);
+            p3.texte = "Y’a rien de plus con qu’un ordinateur.",
+            p3.auteur = "Louis Schuffenecker",
+            p3.couleur = "blue",
+            p3.gras = true
+
+            let propriétésP4 = {
+            texte: "On voit bien que tu n’as pas rencontré certains de mes étudiants, Louis !", 
+            auteur: "enseignant anonyme", 
+            couleur: "olive", 
+            gras: false
+        };
+
+        let p4 = Object.create(protoPara);
+        Object.assign(p4, propriétésP4);
+        </script>
+    </head>
+    <body>
+        <div id = "cadre">
+            <p>Le cadre commence ici.</p>
+        </div>
+    </body>
+</html>

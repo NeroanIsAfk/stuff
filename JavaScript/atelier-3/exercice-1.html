@@ -1,0 +1,26 @@
+<!doctype HTML> 
+<html> 
+    <head> 
+        <meta charset="utf-8" /> 
+    </head> 
+    <body> 
+        <h1>Tests sur les fonctions en Javascript</h1> 
+        <script>
+        const sortir = new Function("txt", 'console.log(txt)');
+        const citeNFois = new Function ("mot", "nombreDeFois", 
+            `for(let i = 1; i <= nombreDeFois; i++) 
+            { 
+                sortir(i + ") " + mot);
+            }`
+        );
+        let mot = prompt("Quel est le mot que vous souhaitez afficher plusieurs fois ?");
+        let nombreDeFois;
+        do
+        {
+            nombreDeFois = Number(prompt("Combien de fois voulez-vous répetez le nombre ?"));
+        } while (!isFinite(nombreDeFois) || nombreDeFois <= 0)
+        citeNFois(mot, nombreDeFois);
+        </script>
+    </body> 
+</html>
+

@@ -1,0 +1,40 @@
+body
+{
+    display : flex;
+    flex-wrap: wrap;
+}
+
+.musicien
+{
+    width: 220px;
+    border: 1px solid blue;
+    background-color: lemonchiffon;
+    margin : 8px;
+}
+
+.musicien h1
+{
+    text-align: center;
+    margin-bottom: auto;
+}
+
+.musicien h2
+{
+    text-align: center;
+    color: gray;
+    margin-top: auto;
+}
+
+.musicien img
+{
+    display : block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 200px;
+}
+
+.musicien p
+{
+    text-align: center;
+    font-weight: bold;
+}

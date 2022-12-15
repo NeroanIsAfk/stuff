@@ -1,0 +1,7 @@
+C:\Users\Utilisateur\RiderProjects\Laboratoire - 2\Laboratoire - 2\bin\Debug\Laboratoire___2.exe
+C:\Users\Utilisateur\RiderProjects\Laboratoire - 2\Laboratoire - 2\bin\Debug\Laboratoire___2.pdb
+C:\Users\Utilisateur\RiderProjects\Laboratoire - 2\Laboratoire - 2\obj\Debug\Laboratoire - 2.csproj.AssemblyReference.cache
+C:\Users\Utilisateur\RiderProjects\Laboratoire - 2\Laboratoire - 2\obj\Debug\Laboratoire - 2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Utilisateur\RiderProjects\Laboratoire - 2\Laboratoire - 2\obj\Debug\Laboratoire - 2.csproj.CoreCompileInputs.cache
+C:\Users\Utilisateur\RiderProjects\Laboratoire - 2\Laboratoire - 2\obj\Debug\Laboratoire___2.exe
+C:\Users\Utilisateur\RiderProjects\Laboratoire - 2\Laboratoire - 2\obj\Debug\Laboratoire___2.pdb

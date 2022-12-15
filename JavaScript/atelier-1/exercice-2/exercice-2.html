@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="UTF-8"/> 
+        <script>
+
+            let dynMinuscule = true;
+            let dyna = "DYNAMIQUES";
+
+            function changeDyn (txt)
+            {
+                let cible = document.getElementById("dyna");
+                cible.innerHTML = txt;
+            }
+
+            function toggleDyn ()
+            {
+                if (dynMinuscule)
+                {
+                    dyna = dyna.toUpperCase();
+                }
+                else
+                {
+                    dyna = dyna.toLowerCase();
+                }
+                dynMinuscule = !dynMinuscule;
+                changeDyn(dyna);
+            }
+        </script>
+    </head> 
+    <body> 
+        <script>
+            let maintenant = new Date ();
+            let hours = maintenant.getHours();
+            let minutes = maintenant.getMinutes();
+            alert("Voici l'heure actuel : " + hours + ":" + minutes);
+        </script>
+        <p><strong>Javascript</strong> est un langage de scripts compris par la plupart des navigateurs web. Ce sont ces derniers qui exécutent le code Javascript.</p> 
+        <p>Grâce à Javascript, les pages web deviennent</p> 
+        <ul> 
+            <li>interactives,</li> 
+            <li>plus intéressantes,</li> 
+            <li>plus <span id='dyna' onclick = "toggleDyn();">dynamiques</span> !</li> 
+        </ul>
+        <script>
+            alert("Cliquez sur Ok.");
+            document.write("<h2>Les origines de Javascript</h2>");
+        </script>
+        <p>Javascript est un standard géré par la <a href=' http://www.ecma-international.org/'>ECMA</a>.</p> 
+    </body> 
+</html>

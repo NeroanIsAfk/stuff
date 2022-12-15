@@ -1,0 +1,22 @@
+.negatif 
+{ 
+    color : red ; 
+    font-weight : bold 
+} 
+
+.positif 
+{ 
+    color : blue 
+}
+
+table
+{
+    border : 1px solid;
+}
+
+tr, td
+{
+    border : 1px solid;
+    text-align: center;
+    width: 75px;
+}

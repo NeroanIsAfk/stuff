@@ -1,0 +1,12 @@
+#titre
+{
+    font-weight: bold;
+}
+
+#para
+{
+    background-color: olive;
+    color: papayawhip;
+    border : 1px solid;
+    padding : 12px;
+}
