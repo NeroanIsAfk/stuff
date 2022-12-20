@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            const nbClicksRequis = 5;
+            const nbBouttonsSouhaités = 30;
+            let emplacement;
+
+            function action() 
+            {
+                this.dataset.nbClicksEffectue++;
+                let nbClicksRestant = nbClicksRequis - this.dataset.nbClicksEffectue;
+
+                if (nbClicksRestant > 0)
+                {
+                    this.innerHTML = `Encore ${nbClicksRestant} fois !`;
+                }
+                else
+                {
+                    this.innerHTML = "Merci !"
+                }    
+            }
+
+            function ajouteBoutton()
+            {
+                let boutton = document.createElement("button");
+                boutton.classList.add("boutton");
+                boutton.textContent = "Cliquez-moi !";
+                boutton.dataset.nbClicksEffectue = 0;
+                boutton.addEventListener("click", action);
+                emplacement.appendChild(boutton);
+            }
+            
+            window.onload = function () 
+            {
+                emplacement = document.getElementById("emplacementBoutton");
+                for (let i = 0; i < nbBouttonsSouhaités; i++)
+                {
+                    ajouteBoutton();
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <div id = "emplacementBoutton">
+        </div>
+    </body>
+</html>

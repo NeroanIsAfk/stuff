@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quelques peintures</title>
+        <meta charset="utf-8" />
+        <style>
+            #peintures {
+                border: 1px solid green;
+                background-color: lightgreen;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                margin-bottom: 0;
+            }
+
+            .peintures {
+                border: 2px solid black;
+                margin: 4px;
+                width: 150px;
+            }
+
+            .peintures:hover 
+            {
+                border-color: yellow;
+            }
+
+            #commentaire {
+                margin-top: 0;
+                border: 1px solid green;
+                background-color: lemonchiffon;
+                min-height: 80px;
+                padding: 8px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        </style>
+        <script>
+            let peintures =
+            [
+                ["escaliers.jpg", "Maison aux escaliers", "Escher"],
+                ["frappis.jpg", "", "Frappis"],
+                ["radeau.jpg", "Radeau de la Méduse", "Géricault"],
+                ["joconde.png", "Joconde revisitée"],
+                ["fleurs.jpg"],
+                ["pipe.jpg", "La trahison des images", "Magritte"],
+                ["persistence.jpg", "The Persistence of Memory", "Dali"]
+            ];
+
+            function afficheCommentaire ()
+            {
+                let commentaire = document.getElementById("pcommentaire");
+                commentaire.innerHTML = `Commentaire : ${this.dataset.info}`;
+            }
+
+            function modifieCommentaire (titre, auteur) // Il faut revoir avec le nullish dans la théorie 7
+            {
+                let commentaireCorrect = "";
+
+                if (!titre && !auteur)
+                {
+                    commentaireCorrect = "aucune information";
+                }
+                else
+                {
+                    commentaireCorrect = `&laquo ${titre} &raquo ${auteur ? "par " + auteur : "(auteur inconnu)"}`;
+                    // commentaireCorrect = `&laquo ${titre} &raquo ${auteur = auteur ?? "(auteur inconnu)"}`; -> avec un nullish
+                }
+
+                return commentaireCorrect;
+            }
+
+            function créePeinture (sourceImage, titre, auteur)
+            {
+                let peinture = document.createElement("img");
+                
+                peinture.src = sourceImage;
+                peinture.classList.add("peintures");
+                peinture.dataset.info = modifieCommentaire(titre, auteur);
+                
+                peinture.addEventListener("mouseover", afficheCommentaire);
+
+                return peinture;
+            }
+
+            window.onload = function ()
+            {
+                let cadre = document.getElementById("peintures");
+                for (let peinture of peintures) 
+                {
+                    let elem = créePeinture(...peinture);
+                    cadre.appendChild(elem);    
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="peintures">
+            <!-- <script>
+                let elem = créePeinture("escaliers.jpg"); 
+                document.getElementById("peintures").appendChild(elem);
+            </script> -->
+        </div>
+        <div id="commentaire">
+            <p id="pcommentaire"></p>
+        </div>
+    </body>
+</html>
